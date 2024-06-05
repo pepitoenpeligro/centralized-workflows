@@ -1,49 +1,11 @@
 version: 2
-
-# this key should be modified by the developer
 updates:
-- package-ecosystem: 'pip'
-  directory: '/'
+- package-ecosystem: pip
+  directory: "/"
   schedule:
-    interval: 'weekly'
-    day: 'monday'
-    time: '07:00'
-    timezone: Europe/Madrid
-  open-pull-requests-limit: 20
-  commit-message:
-    prefix: 'chore: [Python]'
-  target-branch: 'develop'
-  labels:
-      - python
-      - dependabot
-- package-ecosystem: 'npm'
-  directory: '/'
-  schedule:
-    interval: 'weekly'
-    day: 'monday'
-    time: '07:00'
-    timezone: Europe/Madrid
-  open-pull-requests-limit: 20
-  commit-message:
-    prefix: 'chore: [JS]'
-  target-branch: 'develop'
-  labels:
-      - npm
-      - dependabot
-- package-ecosystem: 'github-actions'
-  directory: '/'
+    interval: daily
+    time: "13:00"
   groups:
-      GitHub_Actions:
-        patterns:
-          - '*'  # Group gh action in one PR. There is no unit test in GH for each update version
-  schedule:
-    interval: 'weekly'
-    day: 'monday'
-    time: '07:00'
-    timezone: Europe/Madrid
-  commit-message:
-    prefix: 'chore: [ghAction]'
-  target-branch: 'develop'
-  labels:
-      - ghaction
-      - dependabot
+    python-packages:
+      patterns:
+        - "*"
